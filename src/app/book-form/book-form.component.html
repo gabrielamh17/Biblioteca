@@ -1,0 +1,16 @@
+<form (ngSubmit)="saveBook()">
+  <label for="titulo">Título:</label>
+  <input id="titulo" [(ngModel)]="book.titulo" name="titulo" required />
+
+  <label for="autor">Autor:</label>
+  <input id="autor" [(ngModel)]="book.autor" name="autor" required />
+
+  <label for="year">Año de Publicación:</label>
+  <input id="year" type="number" [(ngModel)]="book.year" name="year" required />
+
+  <label for="coverImage">URL de la Portada:</label>
+  <input id="coverImage" [(ngModel)]="book.coverImage" name="coverImage" placeholder="http://example.com/portada.jpg" />
+
+  <button type="submit">Guardar</button>
+</form>
+

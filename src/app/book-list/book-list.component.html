@@ -1,0 +1,38 @@
+<div class="book-list">
+  <app-search></app-search>
+
+  <ul>
+    <li *ngFor="let book of books" class="book-item">
+      <img [src]="book.coverImage || 'assets/book-cover-placeholder.jpg'" alt="{{ book.titulo }}" class="book-cover" />
+      <div class="book-details">
+        <h2>{{ book.titulo }}</h2>
+        <p>Autor: {{ book.autor }}</p>
+        <p>Año: {{ book.year }}</p>
+      </div>
+      <button (click)="editBook(book)">Editar</button>
+      <button (click)="deleteBook(book.id)">Eliminar</button>
+    </li>
+  </ul>
+
+  <div *ngIf="editingBook" class="edit-form">
+    <h3>Editar Libro</h3>
+    <form (ngSubmit)="saveBook()">
+      <label>
+        Título:
+        <input [(ngModel)]="editingBook.titulo" name="title" required />
+      </label>
+      <label>
+        Autor:
+        <input [(ngModel)]="editingBook.autor" name="author" required />
+      </label>
+      <label>
+        Año:
+        <input type="number" [(ngModel)]="editingBook.year" name="year" required />
+      </label>
+      <button type="submit">Guardar</button>
+      <button type="button" (click)="cancelEdit()">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+

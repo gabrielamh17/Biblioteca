@@ -1,0 +1,46 @@
+/* Barra de navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4a3f35; 
+  padding: 0.5rem 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  color: #f7dba7; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+nav .logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  animation: logo-spin 5s linear infinite;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+nav .nav-links a {
+  margin-left: 1rem;
+  color: #f7dba7;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+nav .nav-links a:hover {
+  text-decoration: underline;
+}
